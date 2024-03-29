@@ -5,7 +5,6 @@ const http = require('http').createServer(app)
 app.get('/', (req, res) => {
    res.send("Node Server is running. Yay!!!!!")
 })
-http.listen(8080)
 
 //Socket Logic
 const socketio = require("socket.io")(http)
@@ -16,4 +15,4 @@ socketio.on("conecction",(userSocket)=>{
     })
 })
 
-http.listen(8080)
+http.listen(process.env.PORT)
